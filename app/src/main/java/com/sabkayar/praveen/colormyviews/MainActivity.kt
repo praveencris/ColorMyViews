@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         val clickableViews: List<View> =
             listOf(
                 mBinding.boxOneText, mBinding.boxTwoText, mBinding.boxThreeText
-                , mBinding.boxFourText, mBinding.boxFiveText,mBinding.constraintLayout
+                , mBinding.boxFourText, mBinding.boxFiveText, mBinding.constraintLayout,
+                mBinding.redButton, mBinding.greenButton, mBinding.yellowButton
             )
         for (item in clickableViews)
             item.setOnClickListener() {
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             R.id.box_three_text -> view.setBackgroundColor(Color.BLUE)
             R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
             R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
+            // Boxes using custom colors for background
+            R.id.red_button -> mBinding.boxThreeText.setBackgroundResource(R.color.my_red)
+            R.id.yellow_button -> mBinding.boxFourText.setBackgroundResource(R.color.my_yellow)
+            R.id.green_button -> mBinding.boxFiveText.setBackgroundResource(R.color.my_green)
+
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
